@@ -41,7 +41,7 @@ jobs:
       run: yarn tsc
 
     - name: Build Backend
-      run: yarn build:backend
+      run: CI=false yarn build:backend
 
     - name: Login DockerHub
       uses: docker/login-action@v3
