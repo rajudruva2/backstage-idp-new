@@ -1,12 +1,15 @@
 
+
 import { createApp } from '@backstage/frontend-defaults';
+import { convertLegacyAppOptions } from '@backstage/core-compat-api';
+
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { SignInPage } from '@backstage/core-components';
 
 import catalogPlugin from '@backstage/plugin-catalog/alpha';
 import { navModule } from './modules/nav';
 
-export default createApp({
+const convertedOptionsModule = convertLegacyAppOptions({
   components: {
     SignInPage: props => (
       <SignInPage
@@ -21,6 +24,8 @@ export default createApp({
       />
     ),
   },
+});
 
-  features: [catalogPlugin, navModule],
+export default createApp({
+  features: [catalogPlugin, navModule, convertedOptionsModule],
 });
