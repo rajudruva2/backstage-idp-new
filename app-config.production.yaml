@@ -12,9 +12,12 @@ backend:
     credentials: true
 
   database:
-    client: better-sqlite3
+    client: pg
     connection:
-    directory: /tmp/backstage-db
+      host: postgres
+      port: 5432
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
 
 auth:
   environment: production
