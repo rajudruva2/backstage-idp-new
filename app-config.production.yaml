@@ -18,7 +18,7 @@ backend:
       port: 5432
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
-
+      database: backstage
 auth:
   environment: production
   keyStore:
