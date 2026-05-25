@@ -71,10 +71,7 @@ jobs:
       run: |
         sed -i "s|image: rajvam6806/backstage:.*|image: rajvam6806/backstage:${IMAGE_TAG}|g" \
         gitops/apps/backstage/deployment.yaml
-    - name: Update Migration Job Image
-      run: |
-        sed -i "s|image: rajvam6806/backstage:.*|image: rajvam6806/backstage:${IMAGE_TAG}|g" \
-        gitops/apps/backstage/migration-job.yaml
+    
 
    
     - name: Commit GitOps Changes
