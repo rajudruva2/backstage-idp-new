@@ -13,7 +13,8 @@ backend:
 
   database:
     client: better-sqlite3
-    connection: /tmp/backstage.db
+    connection:
+    directory: /tmp/backstage-db
 
 auth:
   environment: production
