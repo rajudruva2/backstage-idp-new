@@ -21,7 +21,8 @@ backend:
 
 auth:
   environment: production
-
+  keyStore:
+    provider: memory
   providers:
     github:
       production:
